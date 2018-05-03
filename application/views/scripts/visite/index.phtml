@@ -1,0 +1,33 @@
+<a href="<?php echo $this->url(array('controller' => 'index', 'action' => 'index')); ?>">Retour</a>     
+<br /><br />
+<div id="view-content">
+    <p>Liste des <b>visites</b>
+</div>
+<a href="<?php echo $this->url(array('controller' => 'visite', 'action' => 'ajouter')); ?>">Ajouter visite</a> 
+<table border="1">
+    <tr>
+        <th>Num du client</th>
+        
+        <th> Num de l'appart</th>
+
+        <th> date visite</th>
+
+    </tr>
+
+</html>
+
+<?php
+foreach ($this->lesvisites as $unevisite) {
+    ?>
+    <tr>
+        <td><?php echo $unevisite->NUM_CLI; ?></td>
+
+        <td><?php echo $unevisite->NUMAPPART; ?></td>
+
+        <td><?php echo $unevisite->DATE_VISITE; ?></td>
+
+    </tr>
+    <?php
+}
+?>
+</table>

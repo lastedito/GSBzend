@@ -1,0 +1,68 @@
+    <br /><br />
+       <a href="<?php echo $this->url(array('controller' => 'index', 'action' => 'index')); ?>">Retour</a> 
+    <div id="view-content">
+        <p>Liste des <b>locataires</b>
+    </div>
+     <a href="<?php echo $this->url(array('controller' => 'locataires', 'action' => 'ajouter')); ?>">Ajouter Locataires</a> 
+    <table border="1">
+        <tr>
+            <td>Numero de locataire</td>
+     
+            <td> Nom locataire</td>
+     
+            <td> Prenom locataire</td>
+     
+            <td> Date naissance </td>
+     
+            <td> Tel</td>
+     
+            <td> RIB</td>
+     
+            <td> Banque</td>
+     
+            <td> Rue Banque</td>
+     
+            <td> Code ville Banque</td>
+     
+             <td>Tel banque</td>
+     
+       
+     </tr>
+        
+    </html>
+  
+        <?php
+        foreach ($this->leslocataires as $leslocataires) {
+            ?>
+            <tr>
+                <td><?php echo $leslocataires->NUMEROLOC;?></td></td>
+     
+                <td><?php echo $leslocataires->NOM_LOC;?></td></td>
+     
+                <td><?php echo $leslocataires->PRENOM_LOC;?></td></td>
+                
+                 <td><?php echo $leslocataires->DATENAISS;?></td></td>
+     
+                <td><?php echo $leslocataires->TEL_LOC;?></td></td>
+     
+                <td><?php echo $leslocataires->R_I_B;?></td></td>
+     
+                <td><?php echo $leslocataires->BANQUE;?></td></td>
+     
+                <td><?php echo $leslocataires->RUE_BANQUE;?></td></td>
+     
+                <td><?php echo $leslocataires->CODEVILLE_BANQUE;?></td></td>
+     
+                <td><?php echo $leslocataires->TEL_BANQUE;?></td></td>
+     
+                <td><a href="<?php echo $this->url(array('controller' => 'locataires', 'action' => 'modifier', 'NUMEROLOC' => $leslocataires->NUMEROLOC)); ?>">Modifier</a></td>
+                
+                <td><a href="<?php echo $this->url(array('controller' => 'locataires', 'action' => 'supprimer', 'NUMEROLOC'=> $leslocataires->NUMEROLOC)); ?>">Supprimer</a></td>
+     
+                
+     
+            </tr>
+            <?php
+        }
+        ?>
+    </table>

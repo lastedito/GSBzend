@@ -1,0 +1,14 @@
+<p> Voulez vous supprimer la location numero
+    '<?php echo $this->locataires['NUMEROLOC'];
+    ?> '.
+</p>
+<form action="<?php echo $this->url(array('controller' => 'Locataires', 'action' => 'supprimer')); ?>" method="post">
+    <div>
+        
+        <input type="hidden" name="NUMEROLOC" value="<?php echo $this->locataires['NUMEROLOC']; ?>"/>
+        <input type="submit" name="supprimer" value="oui"/>
+        <input type="submit" name="supprimer" value="non"/>
+        
+    </div>
+</form>
+        

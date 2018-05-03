@@ -1,0 +1,14 @@
+<p> Voulez vous supprimer le numero
+    '<?php echo $this->client['NUM_CLI'];
+    ?> '.
+</p>
+<form action="<?php echo $this->url(array('controller' => 'Client', 'action' => 'supprimer')); ?>" method="post">
+    <div>
+        
+        <input type="hidden" name="NUM_CLI" value="<?php echo $this->client['NUM_CLI']; ?>"/>
+        <input type="submit" name="supprimer" value="oui"/>
+        <input type="submit" name="supprimer" value="non"/>
+        
+    </div>
+</form>
+        

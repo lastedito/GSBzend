@@ -1,0 +1,58 @@
+       <a href="<?php echo $this->url(array('controller' => 'index', 'action' => 'index')); ?>">Retour</a> 
+<br /><br />
+<div id="view-content">
+    <p>Details des  <b>cotisations <b>du <b>proprietaire <b>
+</div>
+<a href="<?php echo $this->url(array('controller' => 'proprietaires', 'action' => 'ajouter')); ?>">Ajouter Proprietaires</a> 
+<table border="1">
+    <tr>
+
+        <td> Nom proprietaire</td>
+
+        <td> Prenom proprietaire</td>
+
+        <td> Adresse proprietaire </td>
+
+        <td> code ville</td>
+
+    </tr>
+
+    <tr>
+
+        <td><?php echo $this->proprietaire["NOM"]; ?></td>
+
+        <td><?php echo $this->proprietaire["PRENOM"]; ?></td>
+
+        <td><?php echo $this->proprietaire["ADRESSE"]; ?></td>
+
+        <td><?php echo $this->proprietaire["CODE_VILLE"]; ?></td>
+        </table>
+<table border="1">
+<?php foreach($this->appartements as $unapp){
+    ?>
+
+        <tr>
+            
+        <td> Num appart</td>
+        
+        <td> Loyer</td>
+        
+        <td> Cotisation</td>
+        
+        </tr>
+        
+        <tr>
+        <td><?php echo $unapp["NUMAPPART"]; ?></td>
+        
+         <td><?php echo $unapp["PRIX_LOC"]; ?></td>
+         
+          <td><?php echo $unapp["PRIX_CHARG"]; ?></td>
+
+        </tr>
+<?php
+}
+?>
+    </tr>
+    
+</table>
+        <?php echo "total = ".$details= $this->lesappartements->obtenirChargeProp($this->proprietaire['NUMEROPROP']); ?>

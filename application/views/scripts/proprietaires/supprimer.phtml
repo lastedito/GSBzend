@@ -1,0 +1,14 @@
+<p> Voulez vous supprimer le proprio numero
+    '<?php echo $this->proprietaires['NUMEROPROP'];
+    ?> '.
+</p>
+<form action="<?php echo $this->url(array('controller' => 'Proprietaires', 'action' => 'supprimer')); ?>" method="post">
+    <div>
+        
+        <input type="hidden" name="NUMEROPROP" value="<?php echo $this->proprietaires['NUMEROPROP']; ?>"/>
+        <input type="submit" name="supprimer" value="oui"/>
+        <input type="submit" name="supprimer" value="non"/>
+        
+    </div>
+</form>
+        

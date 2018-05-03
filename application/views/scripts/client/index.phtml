@@ -1,0 +1,50 @@
+    <br /><br />
+       <a href="<?php echo $this->url(array('controller' => 'index', 'action' => 'index')); ?>">Retour</a> 
+    <div id="view-content">
+        <p>Liste des <b>Clients</b>
+    </div>
+     <a href="<?php echo $this->url(array('controller' => 'client', 'action' => 'ajouter')); ?>">Ajouter Client</a> 
+    <table border="1">
+        <tr>
+            <td>Numero du client</td>
+     
+            <td> Nom client</td>
+     
+            <td> Prenom client</td>
+     
+            <td> Adresse client </td>
+     
+            <td> code ville</td>
+     
+            <td> tel</td>
+     </tr>
+        
+    </html>
+  
+        <?php
+        foreach ($this->lesclients as $unclient) {
+            ?>
+            <tr>
+                <td><?php echo $unclient->NUM_CLI;?></td></td>
+     
+                <td><?php echo $unclient->NOM_CLI;?></td></td>
+     
+                <td><?php echo $unclient->PRENOM_CLI;?></td></td>
+                
+                 <td><?php echo $unclient->ADRESSE_CLI;?></td></td>
+     
+                <td><?php echo $unclient->CODEVILLE_CLI;?></td></td>
+     
+                <td><?php echo $unclient->TEL_CLI;?></td></td>
+     
+                <td><a href="<?php echo $this->url(array('controller' => 'client', 'action' => 'modifier', 'NUM_CLI' => $unclient->NUM_CLI)); ?>">Modifier</a></td>
+                
+                <td><a href="<?php echo $this->url(array('controller' => 'client', 'action' => 'supprimer', 'NUM_CLI' => $unclient->NUM_CLI)); ?>">Supprimer</a></td>
+     
+                
+     
+            </tr>
+            <?php
+        }
+        ?>
+    </table>

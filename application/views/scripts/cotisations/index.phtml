@@ -1,0 +1,40 @@
+<a href="<?php echo $this->url(array('controller' => 'index', 'action' => 'index')); ?>">Retour</a>     
+<br /><br />
+<div id="view-content">
+    <p>Liste des <b>cotisations</b>
+</div>
+<table border="1">
+    <tr>
+        <th>Nom du prop</th>
+        
+        <th>Prenom du prop</th>
+
+        <th>Adresse</th>
+
+        <th>Code ville</th>
+        
+        <th>Cotisations</th>
+    </tr>
+
+</html>
+
+<?php
+foreach ($this->lesproprietaires as $unproprietaire) {
+    ?>
+    <tr>
+        <td><?php echo $unproprietaire->NOM; ?></td>
+
+        <td><?php echo $unproprietaire->PRENOM; ?></td>
+
+        <td><?php echo $unproprietaire->ADRESSE; ?></td>
+        
+        <td><?php echo $unproprietaire->CODE_VILLE; ?></td>
+        
+        <td><?php $details=$this->lesappartements->obtenirChargeProp($unproprietaire->NUMEROPROP);
+        echo $details ;
+        ?>   <a href="<?php echo $this->url(array('controller' => 'cotisations', 'action' => 'details','NUMEROPROP'=>$unproprietaire->NUMEROPROP)); ?>"/>details</a></td>
+    </tr>
+    <?php
+}
+?>
+</table>

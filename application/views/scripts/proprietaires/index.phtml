@@ -1,0 +1,50 @@
+       <a href="<?php echo $this->url(array('controller' => 'index', 'action' => 'index')); ?>">Retour</a> 
+<br /><br />
+<div id="view-content">
+    <p>Liste des <b>proprietaires</b>
+</div>
+<a href="<?php echo $this->url(array('controller' => 'proprietaires', 'action' => 'ajouter')); ?>">Ajouter Proprietaires</a> 
+<table border="1">
+    <tr>
+        <td>Numero du proprietaire</td>
+
+        <td> Nom proprietaire</td>
+
+        <td> Prenom proprietaire</td>
+
+        <td> Adresse proprietaire </td>
+
+        <td> code ville</td>
+
+        <td> Tel</td>
+
+
+    </tr>
+
+</html>
+
+<?php
+foreach ($this->lesproprietaires as $lesproprietaires) {
+    ?>
+    <tr>
+        <td><?php echo $lesproprietaires->NUMEROPROP; ?></td>
+
+        <td><?php echo $lesproprietaires->NOM; ?></td>
+
+        <td><?php echo $lesproprietaires->PRENOM; ?></td>
+
+        <td><?php echo $lesproprietaires->ADRESSE; ?></td>
+
+        <td><?php echo $lesproprietaires->CODE_VILLE; ?></td>
+
+        <td><?php echo $lesproprietaires->TEL; ?></td>
+
+        <td><a href="<?php echo $this->url(array('controller' => 'proprietaires', 'action' => 'modifier', 'NUMEROPROP'=> $lesproprietaires->NUMEROPROP)); ?>">Modifier</a></td>
+                
+        <td><a href="<?php echo $this->url(array('controller' => 'proprietaires', 'action' => 'supprimer', 'NUMEROPROP'=> $lesproprietaires->NUMEROPROP)); ?>">Supprimer</a></td>
+
+    </tr>
+    <?php
+}
+?>
+</table>
